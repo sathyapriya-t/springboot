@@ -27,9 +27,9 @@ dependency from external source rather that creating them itself.
 
 There are different types of DI:
 
-- **Constructor Injection:**
-- **Setter Injection:**
-- **Field Injection:**
+- **Constructor Injection:** - better(No need to use autowired annotation, it will automatically connect)
+- **Setter Injection:** - better(need to use autowired annotation or-else it will throw no qualifying bean of type)
+- **Field Injection:** - no that much good(need to use autowired to connect the bean)
 
 ## <u> Annotations:</u>
 
@@ -37,7 +37,17 @@ We use GitHub to host code, to track issues and feature requests, as well as acc
 
 **@SpringBootApplication** - This is where the spring boot project starts.
 
-**@Component** - This annotation creates object(bean) of the class and helps in IOC. The Objects are created in Spring IOC container which of type `ApplicationContext`. Using the Context/Container, we can get the bean.
+**@Component** - This annotation creates object(bean) of the class and helps with IOC(Inversion of Control). The Objects
+are created in Spring IOC container which of type `ApplicationContext`. Using the Context/Container, we can get the
+bean.
+
+**@Autowired** - This annotation will inject the bean(Injecting class object/bean) which is created using @Component
+
+**@Primary** - For Dependency injection, if we have 2 or more class which implements the same Interface(Loose coupling)
+.That Interface
+is used for dependency injection as instance variable, then spring boot will be confused which one to inject. So in that
+time we need to add
+this annotation. Basically if there is confusion, the class which is annotated with @Primary will be preferred.
 
 <p style="padding-left:80px;"> </p> 
 

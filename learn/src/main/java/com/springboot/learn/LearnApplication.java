@@ -1,6 +1,6 @@
 package com.springboot.learn;
 
-import com.springboot.learn.concept.dependencyinjection.Developer;
+import com.springboot.learn.concept.dependencyinjection.typesofinjection.Developer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
