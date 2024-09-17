@@ -35,9 +35,11 @@ There are different types of DI:
 
 We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
 
-### **@SpringBootApplication** -
+**@SpringBootApplication** - This is where the spring boot project starts.
 
-<p style="padding-left:80px;"> This is where the spring boot project starts.</p> 
+**@Component** - This annotation creates object(bean) of the class and helps in IOC. The Objects are created in Spring IOC container which of type `ApplicationContext`. Using the Context/Container, we can get the bean.
+
+<p style="padding-left:80px;"> </p> 
 
 ## We Use [GitHub Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
 
