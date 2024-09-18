@@ -1,5 +1,6 @@
 package com.springboot.learn;
 
+import com.springboot.learn.concept.dependencyinjection.loosecoupling.Tester;
 import com.springboot.learn.concept.dependencyinjection.typesofinjection.Developer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,8 +19,11 @@ public class LearnApplication {
         //context - container
         //contextBean - object
         Developer contextBean = context.getBean(Developer.class);
+        Tester testerContextBean = context.getBean(Tester.class);
+
         //Using Object we can call the method
         contextBean.buildApp();
+        testerContextBean.buildApp();
 
     }
 

@@ -49,6 +49,13 @@ is used for dependency injection as instance variable, then spring boot will be 
 time we need to add
 this annotation. Basically if there is confusion, the class which is annotated with @Primary will be preferred.
 
+**@Qualifier** - This annotation takes a parameter as string of bean name(Not Class name). For Dependency injection, if we have 2 or more class which implements the same Interface(Loose coupling)
+.That Interface
+is used for dependency injection as instance variable, then spring boot will be confused which one to inject.In the time you don't want to add the @Primary annotation you can add @Qualifier annotation in the injecting bean.
+
+Example: `@Qualifier("tablet")` - notice that the parameter has bean/object name not class name
+
+
 <p style="padding-left:80px;"> </p> 
 
 ## We Use [GitHub Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
