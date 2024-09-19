@@ -8,6 +8,8 @@ There are few important concepts that we need to know before learning spring :
 - Loose Coupling/Tight Coupling
 - Becoming a maintainer
 
+spring without springboot is without annotations
+
 ### <u> Inversion of Control</u> - (Principle)
 
 Typically, java is object-oriented programming. Every is based on creation of objects. So, To interact with multiple
