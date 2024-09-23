@@ -8,13 +8,13 @@ There are few important concepts that we need to know before learning spring :
 - Loose Coupling/Tight Coupling
 - Becoming a maintainer
 
-### <u> Difference Between Spring and SpringBoot
+### <u> Difference Between Spring and SpringBoot </u>
 
 spring without spring boot is without annotations. Every thing in spring like bean creation and configurations are done
 by spring.xml file. There are no annotations in spring. In Spring Boot, we do the creation of bean with annotations and
 its easier.
 
-### <u> Inversion of Control</u> - (Principle)
+### <u> Inversion of Control</u> - (Principle) </u>
 
 Typically, java is object-oriented programming. Every is based on creation of objects. So, To interact with multiple
 classes we create objects.When we are using 100s of classes creating, managing and deleting(Whole lifecycle) of objects
@@ -60,6 +60,11 @@ is used for dependency injection as instance variable, then spring boot will be 
 you don't want to add the @Primary annotation you can add @Qualifier annotation in the injecting bean.
 
 Example: `@Qualifier("tablet")` - notice that the parameter has bean/object name not class name
+
+**@RestController** - This handles http request and generate responses for restful web services. This is the specialized
+version of the @controller and @ResponseBody.This basically helps to handle basic http request like PUT,GET,POST and
+DELETE.
+
 
 
 <p style="padding-left:80px;"> </p> 
