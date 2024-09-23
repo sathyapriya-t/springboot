@@ -65,6 +65,10 @@ Example: `@Qualifier("tablet")` - notice that the parameter has bean/object name
 version of the @controller and @ResponseBody.This basically helps to handle basic http request like PUT,GET,POST and
 DELETE.
 
+**@RequestMapping** - This maps the web request to the spring Controller. It tasks two parameter. one is values which
+takes the mapping request and Another is method which specifies the which http request it is.
+
+Example: `@RequestMapping(value = "/login", method = "RequestMethod.Get")`
 
 
 <p style="padding-left:80px;"> </p> 

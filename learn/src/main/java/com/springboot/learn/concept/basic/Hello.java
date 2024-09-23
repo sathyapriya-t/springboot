@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Hello {
 
+    // @RequestMapping - maps the http request
     @RequestMapping("/")
     public String welcome(){
         return "Hi, Hello Sathya!!";
