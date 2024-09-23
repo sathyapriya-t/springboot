@@ -8,7 +8,11 @@ There are few important concepts that we need to know before learning spring :
 - Loose Coupling/Tight Coupling
 - Becoming a maintainer
 
-spring without springboot is without annotations
+### <u> Difference Between Spring and SpringBoot
+
+spring without spring boot is without annotations. Every thing in spring like bean creation and configurations are done
+by spring.xml file. There are no annotations in spring. In Spring Boot, we do the creation of bean with annotations and
+its easier.
 
 ### <u> Inversion of Control</u> - (Principle)
 
@@ -35,8 +39,6 @@ There are different types of DI:
 
 ## <u> Annotations:</u>
 
-We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
-
 **@SpringBootApplication** - This is where the spring boot project starts.
 
 **@Component** - This annotation creates object(bean) of the class and helps with IOC(Inversion of Control). The Objects
@@ -51,9 +53,11 @@ is used for dependency injection as instance variable, then spring boot will be 
 time we need to add
 this annotation. Basically if there is confusion, the class which is annotated with @Primary will be preferred.
 
-**@Qualifier** - This annotation takes a parameter as string of bean name(Not Class name). For Dependency injection, if we have 2 or more class which implements the same Interface(Loose coupling)
+**@Qualifier** - This annotation takes a parameter as string of bean name(Not Class name). For Dependency injection, if
+we have 2 or more class which implements the same Interface(Loose coupling)
 .That Interface
-is used for dependency injection as instance variable, then spring boot will be confused which one to inject.In the time you don't want to add the @Primary annotation you can add @Qualifier annotation in the injecting bean.
+is used for dependency injection as instance variable, then spring boot will be confused which one to inject.In the time
+you don't want to add the @Primary annotation you can add @Qualifier annotation in the injecting bean.
 
 Example: `@Qualifier("tablet")` - notice that the parameter has bean/object name not class name
 
