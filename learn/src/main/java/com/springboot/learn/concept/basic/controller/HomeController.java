@@ -1,4 +1,4 @@
-package com.springboot.learn.concept.basic;
+package com.springboot.learn.concept.basic.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
