@@ -61,9 +61,13 @@ you don't want to add the @Primary annotation you can add @Qualifier annotation 
 
 Example: `@Qualifier("tablet")` - notice that the parameter has bean/object name not class name
 
-**@RestController** - This handles http request and generate responses for restful web services. This is the specialized
+**@RestController** - This handles http request and generate responses for restful web services with data/text. This is
+the specialized
 version of the @controller and @ResponseBody.This basically helps to handle basic http request like PUT,GET,POST and
 DELETE.
+
+**@Controller** - This handles http request and generate response as (data + layout) class name. Data can be returned
+using @ResponseBody.
 
 **@RequestMapping** - This maps the web request to the spring Controller. It tasks two parameter. one is values which
 takes the mapping request and Another is method which specifies the which http request it is.
