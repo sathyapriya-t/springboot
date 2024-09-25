@@ -77,6 +77,17 @@ takes the mapping request and Another is method which specifies the which http r
 
 Example: `@RequestMapping(value = "/login", method = "RequestMethod.Get")`
 
+**@RequestParam** - Extracts query parameters from the query string of the HTTP request.Typically used for optional
+parameters or when you want to pass data in the URL in a key-value format.
+
+Example: `localhost:8080/product?prodId=101`
+
+**@PathVariable** -Extracts values from the URI path.Used when the value is part of the URL path itself, often for
+identifying resources.
+
+Example: `localhost:8080/products/101`
+
+
 
 <p style="padding-left:80px;"> </p> 
 

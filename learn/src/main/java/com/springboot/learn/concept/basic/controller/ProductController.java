@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,8 +31,17 @@ public class ProductController {
         return productService.getProducts();
     }
 
+    //@PathVariable - Extracts values from the URI path.Used when the value is part of the URL path itself, often for identifying resources.
+    //localhost:8080/products/101
     @GetMapping("/products/{prodId}")
     public Product getProductById(@PathVariable int prodId) {
+        return productService.getProductById(prodId);
+    }
+
+    //@RequestParam - Extracts query parameters from the query string of the HTTP request.Typically used for optional parameters or when you want to pass data in the URL in a key-value format.
+    //localhost:8080/product?prodId=101
+    @GetMapping("/product")
+    public Product getProductByIdUsingRequestParam(@RequestParam int prodId) {
         return productService.getProductById(prodId);
     }
 
