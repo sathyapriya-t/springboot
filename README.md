@@ -45,6 +45,9 @@ There are different types of DI:
 are created in Spring IOC container which of type `ApplicationContext`. Using the Context/Container, we can get the
 bean.
 
+**@Service** - This annotation does exactly same as @Component. But This is specifically for business logics.This
+creates a bean in spring IOC container.
+
 **@Autowired** - This annotation will inject the bean(Injecting class object/bean) which is created using @Component
 
 **@Primary** - For Dependency injection, if we have 2 or more class which implements the same Interface(Loose coupling)
