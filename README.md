@@ -87,6 +87,9 @@ identifying resources.
 
 Example: `localhost:8080/products/101`
 
+**CRUD Operations** - @GetMapping @PutMapping @PostMapping @DeleteMapping - All performs the crud operation http
+requests
+
 
 
 <p style="padding-left:80px;"> </p> 
