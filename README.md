@@ -48,7 +48,8 @@ bean.
 **@Service** - This annotation does exactly same as @Component. But This is specifically for business logics.This
 creates a bean in spring IOC container.
 
-**@Repository** - This annotation does exactly same as @Component. But This is specifically for repository data storage.This
+**@Repository** - This annotation does exactly same as @Component. But This is specifically for repository data
+storage.This
 creates a bean in spring IOC container.
 
 **@Autowired** - This annotation will inject the bean(Injecting class object/bean) which is created using @Component
@@ -94,12 +95,12 @@ Example: `localhost:8080/products/101`
 requests.
 
 **@Entity** - a class which of type we store in JPA repository. An entity class must have a primary key and it is
-annotated with @Id.
+annotated with @Id. An Entity must contain @ID(PrimaryKey) @Setter @Getter @NoArgConstructor.
 
-
-
-
-
+1. `@Setter and @Getter` - For setting and fetching the values, if this is not present, then the values will be stored
+   as null values
+2. `@Id` - PrimaryKey - this is the unique identifier for a table
+3. `@NoArgConstructor` - Without this bean will not be able to created.
 
 <p style="padding-left:80px;"> </p> 
 
