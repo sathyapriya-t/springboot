@@ -14,9 +14,10 @@ public class JPAProductService {
     private ProductRepository repository;
     public Iterable<Product> getProducts() {
         return repository.findAll();
+
     }
 
-    public Product getProductById(int prodId) {
+    public Product getProductById(Long prodId) {
         return repository.findById(prodId).orElse(null);
     }
 
@@ -24,7 +25,7 @@ public class JPAProductService {
         repository.save(product);
     }
 
-    public void deleteProduct(int prodId) {
+    public void deleteProduct(Long prodId) {
         if (getProductById(prodId) != null) {
             repository.deleteById(prodId);
         }

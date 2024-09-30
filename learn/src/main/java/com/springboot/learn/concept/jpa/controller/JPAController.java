@@ -35,14 +35,14 @@ public class JPAController {
     //@PathVariable - Extracts values from the URI path.Used when the value is part of the URL path itself, often for identifying resources.
     //localhost:8080/products/101
     @GetMapping("/products/{prodId}")
-    public Product getProductById(@PathVariable int prodId) {
+    public Product getProductById(@PathVariable Long prodId) {
         return JPAProductService.getProductById(prodId);
     }
 
     //@RequestParam - Extracts query parameters from the query string of the HTTP request.Typically used for optional parameters or when you want to pass data in the URL in a key-value format.
     //localhost:8080/product?prodId=101
     @GetMapping("/product")
-    public Product getProductByIdUsingRequestParam(@RequestParam int prodId) {
+    public Product getProductByIdUsingRequestParam(@RequestParam Long prodId) {
         return JPAProductService.getProductById(prodId);
     }
 
@@ -62,7 +62,7 @@ public class JPAController {
     }
 
     @DeleteMapping("/products/{prodId}")
-    public void deleteProductById(@PathVariable int prodId) {
+    public void deleteProductById(@PathVariable Long prodId) {
         JPAProductService.deleteProduct(prodId);
     }
 
