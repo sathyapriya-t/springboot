@@ -97,10 +97,16 @@ identifying resources.
 
 Example: `localhost:8080/products/101`
 
+**@RequestHeader** - This annotation binds the request header with the method parameter and helps us to access the
+header of the request. It takes a parameter as string or HttpHeaders which will specify which header parameter we can
+access.
+
+Example: `@RequestHeader(HttpHeaders.CONTENT_LENGTH)`
+
 **CRUD Operations** - @GetMapping @PutMapping @PostMapping @DeleteMapping - All performs the crud operation http
 requests.
 
-**@Entity** - a class which of type we store in JPA repository. An entity class must have a primary key and it is
+**@Entity** - a class which of type we store in JPA repository. An entity class must have a primary key, and it is
 annotated with @Id. An Entity must contain @ID(PrimaryKey) @Setter @Getter @NoArgConstructor.
 
 1. `@Setter and @Getter` - For setting and fetching the values, if this is not present, then the values will be stored

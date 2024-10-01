@@ -3,12 +3,14 @@ package com.springboot.learn.concept.jpa.controller;
 import com.springboot.learn.concept.jpa.data.Product;
 import com.springboot.learn.concept.jpa.service.JPAProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,8 +29,11 @@ public class JPAController {
     public List<Product> getProducts(){
         return JPAProductService.getProducts();
     }*/
+
+    //@RequestHeader - It binds the Request Header with method parameter. Using this we can access the header of the Http request
     @GetMapping("/products")
-    public Iterable<Product> getProducts() {
+    public Iterable<Product> getProducts(@RequestHeader(HttpHeaders.CONTENT_LENGTH) String val) {
+        System.out.println(val);
         return JPAProductService.getProducts();
     }
 
