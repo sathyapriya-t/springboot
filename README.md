@@ -39,7 +39,13 @@ There are different types of DI:
 
 ## <u> Annotations:</u>
 
-**@SpringBootApplication** - This is where the spring boot project starts.
+**@SpringBootApplication** - This is where the spring boot project starts. It includes @EnableAutoConfiguration,
+@ComponentScan, @Configuration.
+
+1. `@EnableAutoConfiguration` - It enables the autoconfiguration mechanism
+2. `@ComponentScan` - It scans the package where the application is located
+3. `@Configuration` - Annotating a class with @Configuration indicates that its primary purpose is as a source of bean
+   definitions
 
 **@Component** - This annotation creates object(bean) of the class and helps with IOC(Inversion of Control). The Objects
 are created in Spring IOC container which of type `ApplicationContext`. Using the Context/Container, we can get the
@@ -100,7 +106,17 @@ annotated with @Id. An Entity must contain @ID(PrimaryKey) @Setter @Getter @NoAr
 1. `@Setter and @Getter` - For setting and fetching the values, if this is not present, then the values will be stored
    as null values
 2. `@Id` - PrimaryKey - this is the unique identifier for a table
-3. `@NoArgConstructor` - Without this bean will not be able to created.
+3. `@NoArgConstructor` - Without this bean will not be able to create.
+
+**@Configuration and @Bean** -
+
+1. `@Configuration` annotation is used to mark the class aa a source of bean definition.
+   This class contain one or more @Bean method, Which spring will generate bean definition and manage with IOC
+   Container.
+2. `@Bean` annotation indicates that the method produces a bean to be managed by spring IOC container. The purpose of
+   this annotation is to define a method that returns a bean to be managed by the Spring container.
+3. `Inter-bean Dependencies` When @Bean methods are declared within @Configuration classes, they can call each other to
+   define dependencies between beans.
 
 <p style="padding-left:80px;"> </p> 
 
