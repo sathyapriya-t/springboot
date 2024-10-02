@@ -23,7 +23,7 @@ import java.util.Map;
 public class JPAController {
 
     @Autowired
-    JPAProductService JPAProductService;
+    JPAProductService jpaProductService;
 
     //RequestMapping also works the same as getMapping
    /* @RequestMapping("/products")
@@ -35,14 +35,20 @@ public class JPAController {
     @GetMapping("/products")
     public Iterable<Product> getProducts(@RequestHeader(HttpHeaders.CONTENT_LENGTH) String val) {
         System.out.println(val);
-        return JPAProductService.getProducts();
+        return jpaProductService.getProducts();
     }
 
     //@PathVariable - Extracts values from the URI path.Used when the value is part of the URL path itself, often for identifying resources.
     //localhost:8080/products/101
     @GetMapping("/products/{prodId}")
     public Product getProductById(@PathVariable Long prodId) {
-        return JPAProductService.getProductById(prodId);
+        return jpaProductService.getProductById(prodId);
+    }
+
+    //Custom Query Method
+    @GetMapping("/productByName/{name}")
+    public Product getProductByName(@PathVariable String name) {
+        return jpaProductService.getProductByName(name);
     }
 
     //@RequestParam - Extracts query parameters from the query string of the HTTP request.Typically used for optional parameters or when you want to pass data in the URL in a key-value format.
@@ -51,31 +57,31 @@ public class JPAController {
     @GetMapping("/product")
     public Product getProductByIdUsingRequestParam(@RequestHeader Map<String,String> header, @RequestParam Long prodId) {
         //header.forEach((key1, value) -> System.out.println(key1 + " " + value));
-        return JPAProductService.getProductById(prodId);
+        return jpaProductService.getProductById(prodId);
     }
 
     @PostMapping("/product")
     public void saveProductById(Product product) {
-        JPAProductService.saveProduct(product);
+        jpaProductService.saveProduct(product);
     }
 
     @PostMapping("/products")
     public void saveProducts(@RequestBody List<Product> products) {
-        JPAProductService.saveProducts(products);
+        jpaProductService.saveProducts(products);
     }
 
     @PutMapping("/products")
     public void updateProduct(@RequestBody Product product) {
-        JPAProductService.saveProduct(product);
+        jpaProductService.saveProduct(product);
     }
 
     @DeleteMapping("/products/{prodId}")
     public void deleteProductById(@PathVariable Long prodId) {
-        JPAProductService.deleteProduct(prodId);
+        jpaProductService.deleteProduct(prodId);
     }
 
     @DeleteMapping("/products")
     public void deleteProduct() {
-        JPAProductService.deleteProducts();
+        jpaProductService.deleteProducts();
     }
 }

@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
+    //Custom Query Method to get the values by name
+    Product findByProdName(String name);
+
 }

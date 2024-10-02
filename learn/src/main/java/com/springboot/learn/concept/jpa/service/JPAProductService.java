@@ -20,6 +20,9 @@ public class JPAProductService {
     public Product getProductById(Long prodId) {
         return repository.findById(prodId).orElse(null);
     }
+    public Product getProductByName(String name) {
+        return repository.findByProdName(name);
+    }
 
     public void saveProduct(Product product) {
         repository.save(product);
