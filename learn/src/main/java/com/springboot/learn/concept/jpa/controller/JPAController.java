@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("jpa")
@@ -46,13 +47,15 @@ public class JPAController {
 
     //@RequestParam - Extracts query parameters from the query string of the HTTP request.Typically used for optional parameters or when you want to pass data in the URL in a key-value format.
     //localhost:8080/product?prodId=101
+    //RequestHeader - it binds the request header to method parameter and can access it.
     @GetMapping("/product")
-    public Product getProductByIdUsingRequestParam(@RequestParam Long prodId) {
+    public Product getProductByIdUsingRequestParam(@RequestHeader Map<String,String> header, @RequestParam Long prodId) {
+        //header.forEach((key1, value) -> System.out.println(key1 + " " + value));
         return JPAProductService.getProductById(prodId);
     }
 
     @PostMapping("/product")
-    public void saveProductById(@RequestBody Product product) {
+    public void saveProductById(Product product) {
         JPAProductService.saveProduct(product);
     }
 
