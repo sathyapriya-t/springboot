@@ -4,6 +4,8 @@ import com.springboot.learn.concept.jpa.data.Product;
 import com.springboot.learn.concept.jpa.service.JPAProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("jpa")
@@ -33,16 +36,25 @@ public class JPAController {
 
     //@RequestHeader - It binds the Request Header with method parameter. Using this we can access the header of the Http request
     @GetMapping("/products")
-    public Iterable<Product> getProducts(@RequestHeader(HttpHeaders.CONTENT_LENGTH) String val) {
+    public ResponseEntity<Iterable<Product>> getProducts(@RequestHeader(HttpHeaders.CONTENT_LENGTH) String val) {
         System.out.println(val);
-        return jpaProductService.getProducts();
+        Iterable<Product> products = jpaProductService.getProducts();
+        if(Objects.nonNull(products)) {
+            return new ResponseEntity<>(products,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     //@PathVariable - Extracts values from the URI path.Used when the value is part of the URL path itself, often for identifying resources.
     //localhost:8080/products/101
     @GetMapping("/products/{prodId}")
-    public Product getProductById(@PathVariable Long prodId) {
-        return jpaProductService.getProductById(prodId);
+    public ResponseEntity<Product> getProductById(@PathVariable Long prodId) {
+
+        Product productById = jpaProductService.getProductById(prodId);
+        if (productById!= null) {
+            return new ResponseEntity<>(productById, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     //Custom Query Method

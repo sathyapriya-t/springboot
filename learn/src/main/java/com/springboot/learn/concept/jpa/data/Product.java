@@ -33,6 +33,6 @@ public class Product {
     private int prize;
 
     //This will convert the date to our convenient format
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private Date date;
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+//    private Date date;
 }
