@@ -23,7 +23,7 @@ import java.util.Map;
 public class JPAController {
 
     @Autowired
-    JPAProductService jpaProductService;
+    private JPAProductService jpaProductService;
 
     //RequestMapping also works the same as getMapping
    /* @RequestMapping("/products")

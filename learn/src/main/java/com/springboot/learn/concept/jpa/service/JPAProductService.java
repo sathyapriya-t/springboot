@@ -14,7 +14,6 @@ public class JPAProductService {
     private ProductRepository repository;
     public Iterable<Product> getProducts() {
         return repository.findAll();
-
     }
 
     public Product getProductById(Long prodId) {
