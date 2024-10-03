@@ -124,6 +124,11 @@ annotated with @Id. An Entity must contain @ID(PrimaryKey) @Setter @Getter @NoAr
 3. `Inter-bean Dependencies` When @Bean methods are declared within @Configuration classes, they can call each other to
    define dependencies between beans.
 
+**@CrossOrigin** - this annotation basically helps in sharing the same url. This is used because of security purpose.
+It is used to enable Cross-Origin Resource Sharing (CORS) on specific handler classes or methods. CORS is a security
+feature implemented by browsers to prevent web pages from making requests to a different domain than the one that served
+the web page. This is important for protecting users from malicious websites
+
 <p style="padding-left:80px;"> </p> 
 
 ## We Use [GitHub Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
