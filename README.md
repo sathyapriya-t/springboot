@@ -127,7 +127,15 @@ annotated with @Id. An Entity must contain @ID(PrimaryKey) @Setter @Getter @NoAr
 **@CrossOrigin** - this annotation basically helps in sharing the same url. This is used because of security purpose.
 It is used to enable Cross-Origin Resource Sharing (CORS) on specific handler classes or methods. CORS is a security
 feature implemented by browsers to prevent web pages from making requests to a different domain than the one that served
-the web page. This is important for protecting users from malicious websites
+the web page. This is important for protecting users from malicious websites.
+
+**@ResponseStatus** - Annotation in Spring Boot is used to mark a method or exception class with a status code and
+reason that should be returned. Used Typically in exception to automatically return certain status when an exception is
+thrown.
+
+**@ResponseEntity** - that allows you to control the entire HTTP response, including the status code, headers, and body.
+It’s often used in controller methods to customize the response sent to the client. Typically used in controller methods
+to return certain status code.
 
 <p style="padding-left:80px;"> </p> 
 
