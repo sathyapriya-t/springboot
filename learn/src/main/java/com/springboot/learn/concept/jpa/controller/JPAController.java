@@ -1,6 +1,7 @@
 package com.springboot.learn.concept.jpa.controller;
 
 import com.springboot.learn.concept.jpa.data.Product;
+import com.springboot.learn.concept.jpa.exception.ResourceNotFoundException;
 import com.springboot.learn.concept.jpa.service.JPAProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -54,7 +55,7 @@ public class JPAController {
         if (productById!= null) {
             return new ResponseEntity<>(productById, HttpStatus.OK);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        throw new ResourceNotFoundException();
     }
 
     //Custom Query Method
